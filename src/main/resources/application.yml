@@ -1,0 +1,27 @@
+spring:
+  #配置数据源
+  datasource:
+    #配置数据源类型
+    type: com.zaxxer.hikari.HikariDataSource
+    #配置连接数据库的信息
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/mybatis_plus?characterEncoding=utf-8&useSSL=false
+    username: root
+    password: 184903
+
+#MyBatis-Plus相关配置
+mybatis-plus:
+  configuration:
+    #配置日志
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+    map-underscore-to-camel-case: false
+  global-config:
+    db-config:
+      # 设置实体类所对应的表的统一前缀
+      table-prefix: t_
+      #配置mp的主键策略为自增
+      id-type: auto
+      table-underline: false # 设置表明不使用下划线方式
+  type-aliases-package: com.atguigu.mybatisplus.pojo
+  # 扫描通用枚举的包
+  type-enums-package: com.atguigu.mybatisplus.enums
